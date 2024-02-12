@@ -9,17 +9,16 @@ import React from 'react';
 import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
-  ScrollView,
   StatusBar,
   StyleSheet,
-  Text,
   useColorScheme,
-  View,
 } from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import Cannon from './src/components/characters/Cannon';
 import Solider from './src/components/characters/Solider';
+import Madarin from './src/components/characters/Madarin';
+import Board from './src/components/characters/board';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -37,8 +36,9 @@ function App(): React.JSX.Element {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-      <Cannon />
+      <Board />
       <Solider />
+      <Madarin />
     </SafeAreaView>
   );
 }
