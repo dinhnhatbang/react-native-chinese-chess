@@ -1,0 +1,13 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/BabelStoneXiangqi.ttf",
+      "sha1": "0dcc9136af65c46592d207489a2a137cb34063ff"
+    },
+    {
+      "path": "src/assets/fonts/BabelStoneXiangqiColour.ttf",
+      "sha1": "1e49ba182cbf6a83dfbf0efa416c22a4f91bc3d6"
+    }
+  ]
+}
