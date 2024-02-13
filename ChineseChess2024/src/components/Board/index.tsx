@@ -16,6 +16,7 @@ import Madarin from '../Characters/Madarin';
 import LightUpAndRight from '../Drawing/LightUpAndRight';
 import LightVerticalAndRight from '../Drawing/LightVericalAndRight';
 import LightVerticalAndHorizontal from '../Drawing/LightVerticalAndHorizontal';
+import LightVerticalAndLeft from '../Drawing/LightVerticalAndLeft';
 import Footer from './Footer';
 import Header from './Header';
 import SidebarLeft from './SidebarLeft';
@@ -85,13 +86,31 @@ export default function Board(): React.JSX.Element {
                 name={'I2'}
                 character={<LightVerticalAndHorizontal />}
               />
-              <Character name={'I3'} />
-              <Character name={'I4'} />
-              <Character name={'I5'} />
-              <Character name={'I6'} />
-              <Character name={'I7'} />
-              <Character name={'I8'} />
-              <Character name={'I9'} />
+              <Character
+                name={'I3'}
+                character={<LightVerticalAndHorizontal />}
+              />
+              <Character
+                name={'I4'}
+                character={<LightVerticalAndHorizontal />}
+              />
+              <Character
+                name={'I5'}
+                character={<LightVerticalAndHorizontal />}
+              />
+              <Character
+                name={'I6'}
+                character={<LightVerticalAndHorizontal />}
+              />
+              <Character
+                name={'I7'}
+                character={<LightVerticalAndHorizontal />}
+              />
+              <Character
+                name={'I8'}
+                character={<LightVerticalAndHorizontal />}
+              />
+              <Character name={'I9'} character={<LightVerticalAndLeft />} />
             </View>
             <View style={{flexDirection: 'row'}}>
               <Character name={'H1'} />
