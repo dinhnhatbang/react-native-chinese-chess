@@ -18,6 +18,7 @@ import LightDownAndHorizontal from '../Drawing/LightDownAndHorizontal';
 import LightUpAndHorizontal from '../Drawing/LightUpAndHorizontal';
 import LightVerticalAndRight from '../Drawing/LightVericalAndRight';
 import LightVerticalAndHorizontal from '../Drawing/LightVerticalAndHorizontal';
+import LightVerticalAndHorizontalAndCross from '../Drawing/LightVerticalAndHorizontalAndCross';
 import LightVerticalAndLeft from '../Drawing/LightVerticalAndLeft';
 import Footer from './Footer';
 import Header from './Header';
@@ -98,7 +99,7 @@ export default function Board(): React.JSX.Element {
               />
               <Character
                 name={'I5'}
-                character={<LightVerticalAndHorizontal />}
+                character={<LightVerticalAndHorizontalAndCross />}
               />
               <Character
                 name={'I6'}
@@ -286,7 +287,7 @@ export default function Board(): React.JSX.Element {
               />
               <Character
                 name={'B5'}
-                character={<LightVerticalAndHorizontal />}
+                character={<LightVerticalAndHorizontalAndCross />}
               />
               <Character
                 name={'B6'}

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text, TextProps, View} from 'react-native';
-import {FONT_SIZE} from '../../constants/theme';
+import {FONT_FAMILY, FONT_SIZE} from '../../constants/theme';
 import {Color} from '../../enum/color';
 
 interface CannonProp extends TextProps {
@@ -16,7 +16,7 @@ export default function Cannon({
     <View>
       <Text
         style={{
-          fontFamily: 'BabelStoneXiangqiColour',
+          fontFamily: FONT_FAMILY,
           fontSize: FONT_SIZE,
         }}>
         {String.fromCodePoint(chacracter)}
