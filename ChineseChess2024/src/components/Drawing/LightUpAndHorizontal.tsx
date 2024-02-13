@@ -31,6 +31,7 @@ export default function LightUpAndHorizontal(): React.JSX.Element {
         style={{
           width: CHARACTER_SIZE / 2,
           height: CHARACTER_LIGHT,
+          marginTop: CHARACTER_SIZE / 2,
           backgroundColor: CHARACTER_COLOR,
         }}></View>
     </View>

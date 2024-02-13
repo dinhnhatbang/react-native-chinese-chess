@@ -187,12 +187,12 @@ export default function Board(): React.JSX.Element {
             <View style={{flexDirection: 'row'}}>
               <Character name={'F1'} character={<LightVerticalAndRight />} />
               <Character name={'F2'} character={<LightUpAndHorizontal />} />
-              <Character name={'F3'} />
-              <Character name={'F4'} />
-              <Character name={'F5'} />
-              <Character name={'F6'} />
-              <Character name={'F7'} />
-              <Character name={'F8'} />
+              <Character name={'F3'} character={<LightUpAndHorizontal />} />
+              <Character name={'F4'} character={<LightUpAndHorizontal />} />
+              <Character name={'F5'} character={<LightUpAndHorizontal />} />
+              <Character name={'F6'} character={<LightUpAndHorizontal />} />
+              <Character name={'F7'} character={<LightUpAndHorizontal />} />
+              <Character name={'F8'} character={<LightUpAndHorizontal />} />
               <Character name={'F9'} character={<LightVerticalAndLeft />} />
             </View>
             <View style={{flexDirection: 'row'}}>
