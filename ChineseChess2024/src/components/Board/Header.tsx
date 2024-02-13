@@ -7,7 +7,7 @@ import HeavyHorizontal from '../Drawing/HeavyHorizontal';
 
 export default function Header(): React.JSX.Element {
   return (
-    <View style={{flexDirection: 'row', backgroundColor: 'green'}}>
+    <View style={{flexDirection: 'row'}}>
       <HeavyDownAndRight />
       <HeavyHorizontal align={JustifyContent.flexStart} />
       <HeavyHorizontal align={JustifyContent.flexStart} />

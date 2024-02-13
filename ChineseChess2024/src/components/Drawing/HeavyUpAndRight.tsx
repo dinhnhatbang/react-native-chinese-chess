@@ -14,7 +14,6 @@ export default function HeavyUpAndRight(): React.JSX.Element {
         height: CHARACTER_SIZE,
         flexDirection: 'row',
         alignItems: 'flex-end',
-        backgroundColor: 'yellow',
       }}>
       <View
         style={{

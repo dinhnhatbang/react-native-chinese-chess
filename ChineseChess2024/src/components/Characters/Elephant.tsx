@@ -7,8 +7,8 @@ interface ColorProp extends TextProps {
   color?: Color;
 }
 
-export default function Horse(props: ColorProp): React.JSX.Element {
-  const chacracter = props.color === Color.Red ? 0x1fa63 : 0x1fa6a;
+export default function Elephant(props: ColorProp): React.JSX.Element {
+  const chacracter = props.color === Color.Red ? 0x1fa62 : 0x1fa69;
   return (
     <View>
       <Text

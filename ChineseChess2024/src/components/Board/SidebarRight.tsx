@@ -6,7 +6,7 @@ import HeavyVertical from '../Drawing/HeavyVertical';
 
 export default function SidebarRight(): React.JSX.Element {
   return (
-    <View style={{width: CHARACTER_SIZE, backgroundColor: 'orange'}}>
+    <View style={{width: CHARACTER_SIZE}}>
       <HeavyVertical align={JustifyContent.flexEnd} />
       <HeavyVertical align={JustifyContent.flexEnd} />
       <HeavyVertical align={JustifyContent.flexEnd} />

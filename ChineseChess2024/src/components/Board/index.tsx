@@ -8,20 +8,22 @@ import {
   WINDOW_WIDTH_ORIGINAL,
 } from '../../constants/theme';
 import {Color} from '../../enum/color';
+import Cannon from '../Characters/Cannon';
 import Character from '../Characters/Character';
 import Chariot from '../Characters/Chariot';
+import Elephant from '../Characters/Elephant';
+import General from '../Characters/General';
+import Horse from '../Characters/Horse';
+import Madarin from '../Characters/Madarin';
 import Footer from './Footer';
 import Header from './Header';
 import SidebarLeft from './SidebarLeft';
 import SidebarRight from './SidebarRight';
 
-const INIT_LOAD = [<Chariot color={Color.Black} />];
-
 export default function Board(): React.JSX.Element {
   return (
     <View
       style={{
-        backgroundColor: 'red',
         height: WINDOW_HEIGHT_ORIGINAL,
         width: WINDOW_WIDTH_ORIGINAL,
         justifyContent: 'center',
@@ -33,22 +35,48 @@ export default function Board(): React.JSX.Element {
           height: BOARD_WIDTH,
           justifyContent: 'center',
           alignItems: 'center',
-          backgroundColor: 'orange',
         }}>
         <Header />
         <View style={{flexDirection: 'row'}}>
           <SidebarLeft />
           <View style={{flexDirection: 'column'}}>
             <View style={{flexDirection: 'row'}}>
-              <Character name={'J1'} />
-              <Character name={'J2'} />
-              <Character name={'J3'} />
-              <Character name={'J4'} />
-              <Character name={'J5'} />
-              <Character name={'J6'} />
-              <Character name={'J7'} />
-              <Character name={'J8'} />
-              <Character name={'J9'} />
+              <Character
+                name={'J1'}
+                character={<Chariot color={Color.Black} />}
+              />
+              <Character
+                name={'J2'}
+                character={<Horse color={Color.Black} />}
+              />
+              <Character
+                name={'J3'}
+                character={<Elephant color={Color.Black} />}
+              />
+              <Character
+                name={'J4'}
+                character={<Madarin color={Color.Black} />}
+              />
+              <Character
+                name={'J5'}
+                character={<General color={Color.Black} />}
+              />
+              <Character
+                name={'J6'}
+                character={<Madarin color={Color.Black} />}
+              />
+              <Character
+                name={'J7'}
+                character={<Elephant color={Color.Black} />}
+              />
+              <Character
+                name={'J8'}
+                character={<Horse color={Color.Black} />}
+              />
+              <Character
+                name={'J9'}
+                character={<Chariot color={Color.Black} />}
+              />
             </View>
             <View style={{flexDirection: 'row'}}>
               <Character name={'I1'} />
@@ -139,15 +167,36 @@ export default function Board(): React.JSX.Element {
               <Character name={'B9'} />
             </View>
             <View style={{flexDirection: 'row'}}>
-              <Character name={'A1'} />
-              <Character name={'A2'} />
-              <Character name={'A3'} />
-              <Character name={'A4'} />
-              <Character name={'A5'} />
-              <Character name={'A6'} />
-              <Character name={'A7'} />
-              <Character name={'A8'} />
-              <Character name={'A9'} />
+              <Character
+                name={'J1'}
+                character={<Chariot color={Color.Red} />}
+              />
+              <Character name={'J2'} character={<Horse color={Color.Red} />} />
+              <Character
+                name={'J3'}
+                character={<Elephant color={Color.Red} />}
+              />
+              <Character
+                name={'J4'}
+                character={<Madarin color={Color.Red} />}
+              />
+              <Character
+                name={'J5'}
+                character={<General color={Color.Red} />}
+              />
+              <Character
+                name={'J6'}
+                character={<Madarin color={Color.Red} />}
+              />
+              <Character
+                name={'J7'}
+                character={<Elephant color={Color.Red} />}
+              />
+              <Character name={'J8'} character={<Horse color={Color.Red} />} />
+              <Character
+                name={'J9'}
+                character={<Chariot color={Color.Red} />}
+              />
             </View>
           </View>
           <SidebarRight />
