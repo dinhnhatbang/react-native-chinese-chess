@@ -7,7 +7,7 @@ import HeavyUpAndRight from '../Drawing/HeavyUpAndRight';
 
 export default function Footer(): React.JSX.Element {
   return (
-    <View style={{flexDirection: 'row'}}>
+    <View style={{flexDirection: 'row', backgroundColor: 'blue'}}>
       <HeavyUpAndRight />
       <HeavyHorizontal align={JustifyContent.flexEnd} />
       <HeavyHorizontal align={JustifyContent.flexEnd} />

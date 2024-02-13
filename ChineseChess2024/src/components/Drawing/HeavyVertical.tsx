@@ -20,7 +20,6 @@ export default function HeavyVertical(
         width: CHARACTER_SIZE,
         height: CHARACTER_SIZE,
         alignItems: props.align,
-        backgroundColor: 'yellow',
       }}>
       <View
         style={{

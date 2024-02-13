@@ -1,6 +1,12 @@
 import React from 'react';
 import {View} from 'react-native';
-import {BOARD_WIDTH, WINDOW_HEIGHT, WINDOW_WIDTH} from '../../constants/theme';
+import {
+  BOARD_WIDTH,
+  WINDOW_HEIGHT,
+  WINDOW_HEIGHT_ORIGINAL,
+  WINDOW_WIDTH,
+  WINDOW_WIDTH_ORIGINAL,
+} from '../../constants/theme';
 import {Color} from '../../enum/color';
 import Character from '../Characters/Character';
 import Chariot from '../Characters/Chariot';
@@ -16,8 +22,8 @@ export default function Board(): React.JSX.Element {
     <View
       style={{
         backgroundColor: 'red',
-        height: WINDOW_HEIGHT,
-        width: WINDOW_WIDTH,
+        height: WINDOW_HEIGHT_ORIGINAL,
+        width: WINDOW_WIDTH_ORIGINAL,
         justifyContent: 'center',
         alignItems: 'center',
       }}>
