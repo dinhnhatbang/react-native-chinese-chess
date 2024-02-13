@@ -15,7 +15,6 @@ export default function Character(props: CharacterProp): React.JSX.Element {
       style={{
         width: CHARACTER_SIZE,
         height: CHARACTER_SIZE,
-        backgroundColor: 'red',
         alignItems: 'center',
         justifyContent: 'center',
       }}>

@@ -15,9 +15,9 @@ if (windowHeight < windowWidth) {
 export const WINDOW_WIDTH = windowWidth;
 export const WINDOW_HEIGHT = windowHeight;
 
-export const FONT_SIZE = 30;
 export const FONT_FAMILY = 'BabelStoneXiangqiColour';
 export const CHARACTER_SIZE = WINDOW_WIDTH / NUMBER_COLUMNS;
+export const FONT_SIZE = CHARACTER_SIZE;
 export const BOARD_WIDTH = CHARACTER_SIZE * 10;
 export const CHARACTER_HEAVY = CHARACTER_SIZE / 10;
 export const CHARACTER_LIGHT = CHARACTER_SIZE / 10 / 2;

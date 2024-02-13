@@ -1,5 +1,6 @@
 import React from 'react';
 import {Text, TextProps, View} from 'react-native';
+import {FONT_FAMILY, FONT_SIZE} from '../../constants/theme';
 import {Color} from '../../enum/color';
 
 interface ColorProp extends TextProps {
@@ -12,8 +13,8 @@ export default function Chariot(props: ColorProp): React.JSX.Element {
     <View>
       <Text
         style={{
-          fontFamily: 'BabelStoneXiangqiColour',
-          fontSize: 30,
+          fontFamily: FONT_FAMILY,
+          fontSize: FONT_SIZE,
         }}>
         {String.fromCodePoint(chacracter)}
       </Text>
