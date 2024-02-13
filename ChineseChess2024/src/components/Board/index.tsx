@@ -191,7 +191,7 @@ export default function Board(): React.JSX.Element {
               <Character name={'F6'} />
               <Character name={'F7'} />
               <Character name={'F8'} />
-              <Character name={'F9'} />
+              <Character name={'F9'} character={<LightVerticalAndLeft />} />
             </View>
             <View style={{flexDirection: 'row'}}>
               <Character name={'E1'} character={<LightVerticalAndRight />} />
@@ -202,7 +202,7 @@ export default function Board(): React.JSX.Element {
               <Character name={'E6'} />
               <Character name={'E7'} />
               <Character name={'E8'} />
-              <Character name={'E9'} />
+              <Character name={'E9'} character={<LightVerticalAndLeft />} />
             </View>
             <View style={{flexDirection: 'row'}}>
               <Character
