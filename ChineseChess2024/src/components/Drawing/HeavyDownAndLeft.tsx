@@ -3,7 +3,7 @@ import {TextProps, View} from 'react-native';
 import {
   CHARACTER_COLOR,
   CHARACTER_SIZE,
-  CHARACTER_THIN,
+  CHARACTER_HEAVY,
 } from '../../constants/theme';
 import {JustifyContent} from '../../enum/justifyContent';
 
@@ -25,12 +25,12 @@ export default function HeavyDownAndLeft(
       <View
         style={{
           width: CHARACTER_SIZE,
-          height: CHARACTER_THIN,
+          height: CHARACTER_HEAVY,
           backgroundColor: CHARACTER_COLOR,
         }}></View>
       <View
         style={{
-          width: CHARACTER_THIN,
+          width: CHARACTER_HEAVY,
           height: CHARACTER_SIZE,
           backgroundColor: CHARACTER_COLOR,
         }}></View>

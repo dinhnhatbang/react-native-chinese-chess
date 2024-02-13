@@ -3,7 +3,7 @@ import {TextProps, View} from 'react-native';
 import {
   CHARACTER_COLOR,
   CHARACTER_SIZE,
-  CHARACTER_THIN,
+  CHARACTER_HEAVY,
 } from '../../constants/theme';
 import {JustifyContent} from '../../enum/justifyContent';
 
@@ -24,7 +24,7 @@ export default function HeavyHorizontal(
       <View
         style={{
           width: CHARACTER_SIZE,
-          height: CHARACTER_THIN,
+          height: CHARACTER_HEAVY,
           backgroundColor: CHARACTER_COLOR,
         }}></View>
     </View>

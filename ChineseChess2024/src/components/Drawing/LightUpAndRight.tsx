@@ -1,36 +1,30 @@
 import React from 'react';
-import {TextProps, View} from 'react-native';
+import {View} from 'react-native';
 import {
   CHARACTER_COLOR,
   CHARACTER_SIZE,
-  CHARACTER_HEAVY,
+  CHARACTER_LIGHT,
 } from '../../constants/theme';
-import {JustifyContent} from '../../enum/justifyContent';
 
-interface HeavyDownAndRightProp extends TextProps {
-  align?: JustifyContent;
-}
-
-export default function HeavyDownAndRight(
-  props: HeavyDownAndRightProp,
-): React.JSX.Element {
+export default function LightUpAndRight(): React.JSX.Element {
   return (
     <View
       style={{
         width: CHARACTER_SIZE,
         height: CHARACTER_SIZE,
         flexDirection: 'row',
+        alignItems: 'flex-end',
       }}>
       <View
         style={{
-          width: CHARACTER_HEAVY,
+          width: CHARACTER_LIGHT,
           height: CHARACTER_SIZE,
           backgroundColor: CHARACTER_COLOR,
         }}></View>
       <View
         style={{
           width: CHARACTER_SIZE,
-          height: CHARACTER_HEAVY,
+          height: CHARACTER_LIGHT,
           backgroundColor: CHARACTER_COLOR,
         }}></View>
     </View>

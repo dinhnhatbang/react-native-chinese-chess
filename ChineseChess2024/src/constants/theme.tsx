@@ -19,5 +19,6 @@ export const FONT_SIZE = 30;
 export const FONT_FAMILY = 'BabelStoneXiangqiColour';
 export const CHARACTER_SIZE = WINDOW_WIDTH / NUMBER_COLUMNS;
 export const BOARD_WIDTH = CHARACTER_SIZE * 10;
-export const CHARACTER_THIN = CHARACTER_SIZE / 10;
+export const CHARACTER_HEAVY = CHARACTER_SIZE / 10;
+export const CHARACTER_LIGHT = CHARACTER_SIZE / 10 / 2;
 export const CHARACTER_COLOR = 'black';
