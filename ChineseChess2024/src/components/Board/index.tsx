@@ -14,6 +14,8 @@ import General from '../Characters/General';
 import Horse from '../Characters/Horse';
 import Madarin from '../Characters/Madarin';
 import Solider from '../Characters/Solider';
+import LightDownAndHorizontal from '../Drawing/LightDownAndHorizontal';
+import LightUpAndRight from '../Drawing/LightUpAndRight';
 import LightVerticalAndRight from '../Drawing/LightVericalAndRight';
 import LightVerticalAndHorizontal from '../Drawing/LightVerticalAndHorizontal';
 import LightVerticalAndLeft from '../Drawing/LightVerticalAndLeft';
@@ -195,13 +197,13 @@ export default function Board(): React.JSX.Element {
             </View>
             <View style={{flexDirection: 'row'}}>
               <Character name={'E1'} character={<LightVerticalAndRight />} />
-              <Character name={'E2'} />
-              <Character name={'E3'} />
-              <Character name={'E4'} />
-              <Character name={'E5'} />
-              <Character name={'E6'} />
-              <Character name={'E7'} />
-              <Character name={'E8'} />
+              <Character name={'E2'} character={<LightDownAndHorizontal />} />
+              <Character name={'E3'} character={<LightDownAndHorizontal />} />
+              <Character name={'E4'} character={<LightDownAndHorizontal />} />
+              <Character name={'E5'} character={<LightDownAndHorizontal />} />
+              <Character name={'E6'} character={<LightDownAndHorizontal />} />
+              <Character name={'E7'} character={<LightDownAndHorizontal />} />
+              <Character name={'E8'} character={<LightDownAndHorizontal />} />
               <Character name={'E9'} character={<LightVerticalAndLeft />} />
             </View>
             <View style={{flexDirection: 'row'}}>
