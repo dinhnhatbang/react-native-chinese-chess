@@ -25,7 +25,7 @@ export default function LightVerticalAndRight(): React.JSX.Element {
         }}></View>
       <View
         style={{
-          width: CHARACTER_SIZE,
+          width: CHARACTER_SIZE / 2,
           height: CHARACTER_LIGHT,
           backgroundColor: CHARACTER_COLOR,
         }}></View>
