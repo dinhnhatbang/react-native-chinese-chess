@@ -14,11 +14,11 @@ export default function LightVerticalAndLeft(): React.JSX.Element {
         width: CHARACTER_SIZE,
         height: CHARACTER_SIZE,
         flexDirection: 'row',
-        alignItems: 'center',
       }}>
       <View
         style={{
           width: CHARACTER_SIZE / 2,
+          marginTop: CHARACTER_SIZE / 2,
           height: CHARACTER_LIGHT,
           backgroundColor: CHARACTER_COLOR,
         }}></View>

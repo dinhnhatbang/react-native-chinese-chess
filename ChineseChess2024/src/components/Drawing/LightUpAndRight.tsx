@@ -13,7 +13,6 @@ export default function LightUpAndRight(): React.JSX.Element {
         width: CHARACTER_SIZE,
         height: CHARACTER_SIZE,
         flexDirection: 'row',
-        alignItems: 'flex-end',
       }}>
       <View
         style={{

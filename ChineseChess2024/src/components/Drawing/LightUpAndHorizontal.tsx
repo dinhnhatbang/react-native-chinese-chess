@@ -4,10 +4,9 @@ import {
   CHARACTER_COLOR,
   CHARACTER_SIZE,
   CHARACTER_LIGHT,
-  FONT_SIZE,
 } from '../../constants/theme';
 
-export default function LightVerticalAndHorizontal(): React.JSX.Element {
+export default function LightUpAndHorizontal(): React.JSX.Element {
   return (
     <View
       style={{
@@ -19,13 +18,13 @@ export default function LightVerticalAndHorizontal(): React.JSX.Element {
         style={{
           width: CHARACTER_SIZE / 2,
           height: CHARACTER_LIGHT,
-          backgroundColor: CHARACTER_COLOR,
           marginTop: CHARACTER_SIZE / 2,
+          backgroundColor: CHARACTER_COLOR,
         }}></View>
       <View
         style={{
           width: CHARACTER_LIGHT,
-          height: CHARACTER_SIZE,
+          height: CHARACTER_SIZE / 2 + CHARACTER_LIGHT,
           backgroundColor: CHARACTER_COLOR,
         }}></View>
       <View
@@ -33,7 +32,6 @@ export default function LightVerticalAndHorizontal(): React.JSX.Element {
           width: CHARACTER_SIZE / 2,
           height: CHARACTER_LIGHT,
           backgroundColor: CHARACTER_COLOR,
-          marginTop: CHARACTER_SIZE / 2,
         }}></View>
     </View>
   );

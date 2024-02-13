@@ -15,7 +15,7 @@ import Horse from '../Characters/Horse';
 import Madarin from '../Characters/Madarin';
 import Solider from '../Characters/Solider';
 import LightDownAndHorizontal from '../Drawing/LightDownAndHorizontal';
-import LightUpAndRight from '../Drawing/LightUpAndRight';
+import LightUpAndHorizontal from '../Drawing/LightUpAndHorizontal';
 import LightVerticalAndRight from '../Drawing/LightVericalAndRight';
 import LightVerticalAndHorizontal from '../Drawing/LightVerticalAndHorizontal';
 import LightVerticalAndLeft from '../Drawing/LightVerticalAndLeft';
@@ -186,7 +186,7 @@ export default function Board(): React.JSX.Element {
             </View>
             <View style={{flexDirection: 'row'}}>
               <Character name={'F1'} character={<LightVerticalAndRight />} />
-              <Character name={'F2'} />
+              <Character name={'F2'} character={<LightUpAndHorizontal />} />
               <Character name={'F3'} />
               <Character name={'F4'} />
               <Character name={'F5'} />

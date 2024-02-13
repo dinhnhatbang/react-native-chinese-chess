@@ -11,9 +11,9 @@ export default function LightDownAndHorizontal(): React.JSX.Element {
     <View
       style={{
         width: CHARACTER_SIZE,
-        height: CHARACTER_SIZE,
+        height: CHARACTER_SIZE / 2,
         flexDirection: 'row',
-        marginTop: CHARACTER_SIZE - CHARACTER_LIGHT,
+        marginTop: CHARACTER_SIZE / 2,
       }}>
       <View
         style={{
@@ -24,7 +24,7 @@ export default function LightDownAndHorizontal(): React.JSX.Element {
       <View
         style={{
           width: CHARACTER_LIGHT,
-          height: CHARACTER_SIZE / 2 + CHARACTER_LIGHT,
+          height: CHARACTER_SIZE / 2,
           backgroundColor: CHARACTER_COLOR,
         }}></View>
       <View
