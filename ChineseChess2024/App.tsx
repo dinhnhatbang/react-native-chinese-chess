@@ -1,12 +1,4 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
-import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
   StatusBar,
@@ -15,14 +7,10 @@ import {
 } from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-import Cannon from './src/components/characters/Cannon';
-import Solider from './src/components/characters/Solider';
-import Madarin from './src/components/characters/Madarin';
-import Board from './src/components/characters/board';
+import Solider from './src/components/Characters/Solider';
+import Madarin from './src/components/Characters/Madarin';
+import Board from './src/components/Board';
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -37,8 +25,6 @@ function App(): React.JSX.Element {
         backgroundColor={backgroundStyle.backgroundColor}
       />
       <Board />
-      <Solider />
-      <Madarin />
     </SafeAreaView>
   );
 }

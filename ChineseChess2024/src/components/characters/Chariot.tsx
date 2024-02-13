@@ -1,9 +1,13 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Text, TextProps, View} from 'react-native';
 import {Color} from '../../enum/color';
 
-export default function Chariot(color: Color): React.JSX.Element {
-  const chacracter = color === Color.Red ? 0x1fa64 : 0x1fa6b;
+interface ColorProp extends TextProps {
+  color?: Color;
+}
+
+export default function Chariot(props: ColorProp): React.JSX.Element {
+  const chacracter = props.color === Color.Red ? 0x1fa64 : 0x1fa6b;
   return (
     <View>
       <Text
