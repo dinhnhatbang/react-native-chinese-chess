@@ -1,6 +1,8 @@
 import React from 'react';
-import {Text, TextProps, TouchableOpacity, View} from 'react-native';
+import {TextProps, TouchableOpacity, View} from 'react-native';
 import {CHARACTER_SIZE} from '../../constants/theme';
+import {Color} from '../../enum/color';
+import Cannon from './Cannon';
 
 interface CharacterProp extends TextProps {
   name?: string;
@@ -17,7 +19,7 @@ export default function Character(props: CharacterProp): React.JSX.Element {
         justifyContent: 'center',
       }}>
       <TouchableOpacity>
-        <Text>{props.name}</Text>
+        <Cannon color={Color.Black} />
       </TouchableOpacity>
     </View>
   );
