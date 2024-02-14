@@ -5,27 +5,40 @@ import {
   WINDOW_HEIGHT_ORIGINAL,
   WINDOW_WIDTH_ORIGINAL,
 } from '../../constants/theme';
-import {Color} from '../../enum/color';
-import Cannon from '../Characters/Cannon';
 import Character from '../Characters/Character';
-import Chariot from '../Characters/Chariot';
-import Elephant from '../Characters/Elephant';
-import General from '../Characters/General';
-import Horse from '../Characters/Horse';
-import Madarin from '../Characters/Madarin';
-import Solider from '../Characters/Solider';
-import LightDownAndHorizontal from '../Drawing/LightDownAndHorizontal';
-import LightUpAndHorizontal from '../Drawing/LightUpAndHorizontal';
-import LightVerticalAndRight from '../Drawing/LightVericalAndRight';
-import LightVerticalAndHorizontal from '../Drawing/LightVerticalAndHorizontal';
-import LightVerticalAndHorizontalAndCross from '../Drawing/LightVerticalAndHorizontalAndCross';
-import LightVerticalAndLeft from '../Drawing/LightVerticalAndLeft';
 import Footer from './Footer';
 import Header from './Header';
+import {INIT_STATE} from './InitState';
 import SidebarLeft from './SidebarLeft';
 import SidebarRight from './SidebarRight';
 
 export default function Board(): React.JSX.Element {
+  const renderCharacter = (
+    key: string,
+    index: number,
+    chacracter: React.JSX.Element,
+  ) => {
+    return <Character name={key + index} character={chacracter} />;
+  };
+
+  const renderBoard = () => {
+    return (
+      <View style={{flexDirection: 'column'}}>
+        <View>
+          {Object.keys(INIT_STATE).map((key: string) => (
+            <View style={{flexDirection: 'row'}}>
+              {key in INIT_STATE &&
+                INIT_STATE[key as keyof typeof INIT_STATE].map(
+                  (value: React.JSX.Element, index: number) =>
+                    renderCharacter(key, index, value),
+                )}
+            </View>
+          ))}
+        </View>
+      </View>
+    );
+  };
+
   return (
     <View
       style={{
@@ -44,298 +57,7 @@ export default function Board(): React.JSX.Element {
         <Header />
         <View style={{flexDirection: 'row'}}>
           <SidebarLeft />
-          <View style={{flexDirection: 'column'}}>
-            <View style={{flexDirection: 'row'}}>
-              <Character
-                name={'J1'}
-                character={<Chariot color={Color.Black} />}
-              />
-              <Character
-                name={'J2'}
-                character={<Horse color={Color.Black} />}
-              />
-              <Character
-                name={'J3'}
-                character={<Elephant color={Color.Black} />}
-              />
-              <Character
-                name={'J4'}
-                character={<Madarin color={Color.Black} />}
-              />
-              <Character
-                name={'J5'}
-                character={<General color={Color.Black} />}
-              />
-              <Character
-                name={'J6'}
-                character={<Madarin color={Color.Black} />}
-              />
-              <Character
-                name={'J7'}
-                character={<Elephant color={Color.Black} />}
-              />
-              <Character
-                name={'J8'}
-                character={<Horse color={Color.Black} />}
-              />
-              <Character
-                name={'J9'}
-                character={<Chariot color={Color.Black} />}
-              />
-            </View>
-            <View style={{flexDirection: 'row'}}>
-              <Character name={'I1'} character={<LightVerticalAndRight />} />
-              <Character
-                name={'I2'}
-                character={<LightVerticalAndHorizontal />}
-              />
-              <Character
-                name={'I3'}
-                character={<LightVerticalAndHorizontal />}
-              />
-              <Character
-                name={'I4'}
-                character={<LightVerticalAndHorizontal />}
-              />
-              <Character
-                name={'I5'}
-                character={<LightVerticalAndHorizontalAndCross />}
-              />
-              <Character
-                name={'I6'}
-                character={<LightVerticalAndHorizontal />}
-              />
-              <Character
-                name={'I7'}
-                character={<LightVerticalAndHorizontal />}
-              />
-              <Character
-                name={'I8'}
-                character={<LightVerticalAndHorizontal />}
-              />
-              <Character name={'I9'} character={<LightVerticalAndLeft />} />
-            </View>
-            <View style={{flexDirection: 'row'}}>
-              <Character name={'H1'} character={<LightVerticalAndRight />} />
-              <Character
-                name={'H2'}
-                character={<Cannon color={Color.Black} />}
-              />
-              <Character
-                name={'H3'}
-                character={<LightVerticalAndHorizontal />}
-              />
-              <Character
-                name={'H4'}
-                character={<LightVerticalAndHorizontal />}
-              />
-              <Character
-                name={'H5'}
-                character={<LightVerticalAndHorizontal />}
-              />
-              <Character
-                name={'H6'}
-                character={<LightVerticalAndHorizontal />}
-              />
-              <Character
-                name={'H7'}
-                character={<LightVerticalAndHorizontal />}
-              />
-              <Character
-                name={'H8'}
-                character={<Cannon color={Color.Black} />}
-              />
-              <Character name={'H9'} character={<LightVerticalAndLeft />} />
-            </View>
-            <View style={{flexDirection: 'row'}}>
-              <Character
-                name={'G1'}
-                character={<Solider color={Color.Black} />}
-              />
-              <Character
-                name={'G2'}
-                character={<LightVerticalAndHorizontal />}
-              />
-              <Character
-                name={'G3'}
-                character={<Solider color={Color.Black} />}
-              />
-              <Character
-                name={'G4'}
-                character={<LightVerticalAndHorizontal />}
-              />
-              <Character
-                name={'G5'}
-                character={<Solider color={Color.Black} />}
-              />
-              <Character
-                name={'G6'}
-                character={<LightVerticalAndHorizontal />}
-              />
-              <Character
-                name={'G7'}
-                character={<Solider color={Color.Black} />}
-              />
-              <Character
-                name={'G8'}
-                character={<LightVerticalAndHorizontal />}
-              />
-              <Character
-                name={'G9'}
-                character={<Solider color={Color.Black} />}
-              />
-            </View>
-            <View style={{flexDirection: 'row'}}>
-              <Character name={'F1'} character={<LightVerticalAndRight />} />
-              <Character name={'F2'} character={<LightUpAndHorizontal />} />
-              <Character name={'F3'} character={<LightUpAndHorizontal />} />
-              <Character name={'F4'} character={<LightUpAndHorizontal />} />
-              <Character name={'F5'} character={<LightUpAndHorizontal />} />
-              <Character name={'F6'} character={<LightUpAndHorizontal />} />
-              <Character name={'F7'} character={<LightUpAndHorizontal />} />
-              <Character name={'F8'} character={<LightUpAndHorizontal />} />
-              <Character name={'F9'} character={<LightVerticalAndLeft />} />
-            </View>
-            <View style={{flexDirection: 'row'}}>
-              <Character name={'E1'} character={<LightVerticalAndRight />} />
-              <Character name={'E2'} character={<LightDownAndHorizontal />} />
-              <Character name={'E3'} character={<LightDownAndHorizontal />} />
-              <Character name={'E4'} character={<LightDownAndHorizontal />} />
-              <Character name={'E5'} character={<LightDownAndHorizontal />} />
-              <Character name={'E6'} character={<LightDownAndHorizontal />} />
-              <Character name={'E7'} character={<LightDownAndHorizontal />} />
-              <Character name={'E8'} character={<LightDownAndHorizontal />} />
-              <Character name={'E9'} character={<LightVerticalAndLeft />} />
-            </View>
-            <View style={{flexDirection: 'row'}}>
-              <Character
-                name={'D1'}
-                character={<Solider color={Color.Red} />}
-              />
-              <Character
-                name={'D2'}
-                character={<LightVerticalAndHorizontal />}
-              />
-              <Character
-                name={'D3'}
-                character={<Solider color={Color.Red} />}
-              />
-              <Character
-                name={'D4'}
-                character={<LightVerticalAndHorizontal />}
-              />
-              <Character
-                name={'D5'}
-                character={<Solider color={Color.Red} />}
-              />
-              <Character
-                name={'D6'}
-                character={<LightVerticalAndHorizontal />}
-              />
-              <Character
-                name={'D7'}
-                character={<Solider color={Color.Red} />}
-              />
-              <Character
-                name={'D8'}
-                character={<LightVerticalAndHorizontal />}
-              />
-              <Character
-                name={'D9'}
-                character={<Solider color={Color.Red} />}
-              />
-            </View>
-            <View style={{flexDirection: 'row'}}>
-              <Character name={'C1'} character={<LightVerticalAndRight />} />
-              <Character name={'C2'} character={<Cannon color={Color.Red} />} />
-              <Character
-                name={'C3'}
-                character={<LightVerticalAndHorizontal />}
-              />
-              <Character
-                name={'C4'}
-                character={<LightVerticalAndHorizontal />}
-              />
-              <Character
-                name={'C5'}
-                character={<LightVerticalAndHorizontal />}
-              />
-              <Character
-                name={'C6'}
-                character={<LightVerticalAndHorizontal />}
-              />
-              <Character
-                name={'C7'}
-                character={<LightVerticalAndHorizontal />}
-              />
-              <Character name={'C8'} character={<Cannon color={Color.Red} />} />
-              <Character name={'C9'} character={<LightVerticalAndLeft />} />
-            </View>
-            <View style={{flexDirection: 'row'}}>
-              <Character name={'B1'} character={<LightVerticalAndRight />} />
-              <Character
-                name={'B2'}
-                character={<LightVerticalAndHorizontal />}
-              />
-              <Character
-                name={'B3'}
-                character={<LightVerticalAndHorizontal />}
-              />
-              <Character
-                name={'B4'}
-                character={<LightVerticalAndHorizontal />}
-              />
-              <Character
-                name={'B5'}
-                character={<LightVerticalAndHorizontalAndCross />}
-              />
-              <Character
-                name={'B6'}
-                character={<LightVerticalAndHorizontal />}
-              />
-              <Character
-                name={'B7'}
-                character={<LightVerticalAndHorizontal />}
-              />
-              <Character
-                name={'B8'}
-                character={<LightVerticalAndHorizontal />}
-              />
-              <Character name={'B9'} character={<LightVerticalAndLeft />} />
-            </View>
-            <View style={{flexDirection: 'row'}}>
-              <Character
-                name={'A1'}
-                character={<Chariot color={Color.Red} />}
-              />
-              <Character name={'A2'} character={<Horse color={Color.Red} />} />
-              <Character
-                name={'A3'}
-                character={<Elephant color={Color.Red} />}
-              />
-              <Character
-                name={'A4'}
-                character={<Madarin color={Color.Red} />}
-              />
-              <Character
-                name={'A5'}
-                character={<General color={Color.Red} />}
-              />
-              <Character
-                name={'A6'}
-                character={<Madarin color={Color.Red} />}
-              />
-              <Character
-                name={'A7'}
-                character={<Elephant color={Color.Red} />}
-              />
-              <Character name={'A8'} character={<Horse color={Color.Red} />} />
-              <Character
-                name={'A9'}
-                character={<Chariot color={Color.Red} />}
-              />
-            </View>
-          </View>
+          {renderBoard()}
           <SidebarRight />
         </View>
         <Footer />
