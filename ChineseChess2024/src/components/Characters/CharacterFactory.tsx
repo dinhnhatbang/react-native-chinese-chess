@@ -1,5 +1,5 @@
-import React, {ReactNode, useContext} from 'react';
-import {Text, TextProps, TouchableOpacity, View} from 'react-native';
+import React from 'react';
+import {TextProps, TouchableOpacity, View} from 'react-native';
 import {CHARACTER_SIZE} from '../../constants/theme';
 import {CharacterEnum} from '../../enum/character';
 import {CharacterType} from '../../types/characterType';
@@ -50,8 +50,10 @@ export default function CharacterFactory(
       <TouchableOpacity
         onPress={() => {
           const currentCharacter = props.character;
-          console.log('position', props.name);
-          console.log('currentCharacter', currentCharacter);
+          console.log('currentCharacter', {
+            ...currentCharacter,
+            index: props.name,
+          });
         }}>
         {factory(props.character)}
       </TouchableOpacity>
