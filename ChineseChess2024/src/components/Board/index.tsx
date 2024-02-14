@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View} from 'react-native';
 import {
   BOARD_WIDTH,
   WINDOW_HEIGHT_ORIGINAL,
   WINDOW_WIDTH_ORIGINAL,
 } from '../../constants/theme';
-import Character from '../Characters/Character';
+import {CharacterType} from '../../types/characterType';
+import CharacterFactory from '../Characters/CharacterFactory';
 import Footer from './Footer';
 import Header from './Header';
 import {INIT_STATE} from './InitState';
@@ -13,23 +14,31 @@ import SidebarLeft from './SidebarLeft';
 import SidebarRight from './SidebarRight';
 
 export default function Board(): React.JSX.Element {
+  const [boardCharacters, setBoardCharacters] = useState(INIT_STATE);
   const renderCharacter = (
     key: string,
     index: number,
-    chacracter: React.JSX.Element,
+    chacracter: CharacterType,
   ) => {
-    return <Character name={key + index} character={chacracter} />;
+    return (
+      <CharacterFactory
+        key={key + index}
+        name={key + index}
+        character={chacracter}
+        setBoardCharacters={setBoardCharacters}
+      />
+    );
   };
 
   const renderBoard = () => {
     return (
       <View style={{flexDirection: 'column'}}>
         <View>
-          {Object.keys(INIT_STATE).map((key: string) => (
-            <View style={{flexDirection: 'row'}}>
-              {key in INIT_STATE &&
-                INIT_STATE[key as keyof typeof INIT_STATE].map(
-                  (value: React.JSX.Element, index: number) =>
+          {Object.keys(boardCharacters).map((key: string) => (
+            <View style={{flexDirection: 'row'}} key={key}>
+              {key in boardCharacters &&
+                boardCharacters[key as keyof typeof boardCharacters].map(
+                  (value: CharacterType, index: number) =>
                     renderCharacter(key, index, value),
                 )}
             </View>
