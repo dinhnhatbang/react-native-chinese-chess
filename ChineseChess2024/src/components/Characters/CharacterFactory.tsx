@@ -15,6 +15,8 @@ import Horse from './Horse';
 import Madarin from './Madarin';
 import Solider from './Solider';
 import {Color} from '../../enum/color';
+import LightDownAndRight from '../Drawing/LightDownAndRight';
+import LightDownAndHorizontal from '../Drawing/LightDownAndHorizontal';
 
 interface CharacterProp extends TextProps {
   name: string;
@@ -54,6 +56,10 @@ export default function CharacterFactory(
         return <LightVerticalAndHorizontalAndCross />;
       case CharacterEnum.LightVerticalAndLeft:
         return <LightVerticalAndLeft />;
+      case CharacterEnum.LightDownAndRight:
+        return <LightDownAndRight />;
+      case CharacterEnum.LightDownAndHorizontal:
+        return <LightDownAndHorizontal />;
     }
   };
 
@@ -63,10 +69,14 @@ export default function CharacterFactory(
     currentCharacter: CharacterType,
   ): CharacterType => {
     if (column === 0) {
-      if (
-        currentCharacter.name === CharacterEnum.LightVerticalAndLeft ||
-        currentCharacter.name === CharacterEnum.LightVerticalAndHorizontal
-      ) {
+      if (row === 'J' && currentCharacter.type === CharacterTypeEnum.Drawing) {
+        return {
+          color: Color.Black,
+          name: CharacterEnum.LightDownAndRight,
+          type: CharacterTypeEnum.Drawing,
+        } as CharacterType;
+      }
+      if (currentCharacter.type === CharacterTypeEnum.Drawing) {
         return {
           color: Color.Black,
           name: CharacterEnum.LightVerticalAndRight,
@@ -87,10 +97,14 @@ export default function CharacterFactory(
       }
     }
     if (column > 0 && column < 8) {
-      if (
-        currentCharacter.name === CharacterEnum.LightVerticalAndLeft ||
-        currentCharacter.name === CharacterEnum.LightVerticalAndRight
-      ) {
+      if (row === 'J' && currentCharacter.type === CharacterTypeEnum.Drawing) {
+        return {
+          color: Color.Black,
+          name: CharacterEnum.LightDownAndHorizontal,
+          type: CharacterTypeEnum.Drawing,
+        } as CharacterType;
+      }
+      if (currentCharacter.type === CharacterTypeEnum.Drawing) {
         return {
           color: Color.Black,
           name: CharacterEnum.LightVerticalAndHorizontal,

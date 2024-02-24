@@ -10,6 +10,8 @@ export enum CharacterEnum {
   LightVerticalAndHorizontal = 'LightVerticalAndHorizontal',
   LightVerticalAndHorizontalAndCross = 'LightVerticalAndHorizontalAndCross',
   LightVerticalAndLeft = 'LightVerticalAndLeft',
+  LightDownAndRight = 'LightDownAndRight',
+  LightDownAndHorizontal = 'LightDownAndHorizontal',
 }
 
 export enum CharacterTypeEnum {
