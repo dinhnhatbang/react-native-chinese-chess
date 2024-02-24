@@ -3,6 +3,10 @@ import {TextProps, TouchableOpacity, View} from 'react-native';
 import {CHARACTER_SIZE} from '../../constants/theme';
 import {CharacterEnum} from '../../enum/character';
 import {CharacterType, MovingCharacterType} from '../../types/characterType';
+import LightVerticalAndRight from '../Drawing/LightVericalAndRight';
+import LightVerticalAndHorizontal from '../Drawing/LightVerticalAndHorizontal';
+import LightVerticalAndHorizontalAndCross from '../Drawing/LightVerticalAndHorizontalAndCross';
+import LightVerticalAndLeft from '../Drawing/LightVerticalAndLeft';
 import Cannon from './Cannon';
 import Chariot from './Chariot';
 import Elephant from './Elephant';
@@ -41,6 +45,14 @@ export default function CharacterFactory(
         return <Elephant color={character.color} />;
       case CharacterEnum.Madarin:
         return <Madarin color={character.color} />;
+      case CharacterEnum.LightVerticalAndRight:
+        return <LightVerticalAndRight />;
+      case CharacterEnum.LightVerticalAndHorizontal:
+        return <LightVerticalAndHorizontal />;
+      case CharacterEnum.LightVerticalAndHorizontalAndCross:
+        return <LightVerticalAndHorizontalAndCross />;
+      case CharacterEnum.LightVerticalAndLeft:
+        return <LightVerticalAndLeft />;
     }
   };
 

@@ -6,4 +6,8 @@ export enum CharacterEnum {
   Chariot = 'Chariot',
   Cannon = 'Cannon',
   Solider = 'Solider',
+  LightVerticalAndRight = 'LightVerticalAndRight',
+  LightVerticalAndHorizontal = 'LightVerticalAndHorizontal',
+  LightVerticalAndHorizontalAndCross = 'LightVerticalAndHorizontalAndCross',
+  LightVerticalAndLeft = 'LightVerticalAndLeft',
 }

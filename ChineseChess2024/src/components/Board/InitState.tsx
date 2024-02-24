@@ -29,17 +29,44 @@ export const INIT_STATE = {
     {name: CharacterEnum.Horse, color: Color.Black} as CharacterType,
     {name: CharacterEnum.Chariot, color: Color.Black} as CharacterType,
   ],
-  // I: [
-  //   <LightVerticalAndRight />,
-  //   <LightVerticalAndHorizontal />,
-  //   <LightVerticalAndHorizontal />,
-  //   <LightVerticalAndHorizontal />,
-  //   <LightVerticalAndHorizontalAndCross />,
-  //   <LightVerticalAndHorizontal />,
-  //   <LightVerticalAndHorizontal />,
-  //   <LightVerticalAndHorizontal />,
-  //   <LightVerticalAndLeft />,
-  // ],
+  I: [
+    {
+      name: CharacterEnum.LightVerticalAndRight,
+      color: Color.Black,
+    } as CharacterType,
+    {
+      name: CharacterEnum.LightVerticalAndHorizontal,
+      color: Color.Black,
+    } as CharacterType,
+    {
+      name: CharacterEnum.LightVerticalAndHorizontal,
+      color: Color.Black,
+    } as CharacterType,
+    {
+      name: CharacterEnum.LightVerticalAndHorizontal,
+      color: Color.Black,
+    } as CharacterType,
+    {
+      name: CharacterEnum.LightVerticalAndHorizontalAndCross,
+      color: Color.Black,
+    } as CharacterType,
+    {
+      name: CharacterEnum.LightVerticalAndHorizontal,
+      color: Color.Black,
+    } as CharacterType,
+    {
+      name: CharacterEnum.LightVerticalAndHorizontal,
+      color: Color.Black,
+    } as CharacterType,
+    {
+      name: CharacterEnum.LightVerticalAndHorizontal,
+      color: Color.Black,
+    } as CharacterType,
+    {
+      name: CharacterEnum.LightVerticalAndLeft,
+      color: Color.Black,
+    } as CharacterType,
+  ],
   // H: [
   //   <LightVerticalAndRight />,
   //   <Cannon color={Color.Black} />,
