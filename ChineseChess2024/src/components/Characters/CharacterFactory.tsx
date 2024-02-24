@@ -17,6 +17,7 @@ import Solider from './Solider';
 import {Color} from '../../enum/color';
 import LightDownAndRight from '../Drawing/LightDownAndRight';
 import LightDownAndHorizontal from '../Drawing/LightDownAndHorizontal';
+import LightDownAndLeft from '../Drawing/LightDownAndLeft';
 
 interface CharacterProp extends TextProps {
   name: string;
@@ -58,6 +59,8 @@ export default function CharacterFactory(
         return <LightVerticalAndLeft />;
       case CharacterEnum.LightDownAndRight:
         return <LightDownAndRight />;
+      case CharacterEnum.LightDownAndLeft:
+        return <LightDownAndLeft />;
       case CharacterEnum.LightDownAndHorizontal:
         return <LightDownAndHorizontal />;
     }
@@ -68,6 +71,14 @@ export default function CharacterFactory(
     column: number,
     currentCharacter: CharacterType,
   ): CharacterType => {
+    console.log(
+      'row',
+      row,
+      'column',
+      column,
+      'currentCharacter',
+      currentCharacter,
+    );
     if (column === 0) {
       if (row === 'J' && currentCharacter.type === CharacterTypeEnum.Drawing) {
         return {
@@ -84,7 +95,15 @@ export default function CharacterFactory(
         } as CharacterType;
       }
     }
+
     if (column === 8) {
+      if (row === 'J' && currentCharacter.type === CharacterTypeEnum.Drawing) {
+        return {
+          color: Color.Black,
+          name: CharacterEnum.LightDownAndLeft,
+          type: CharacterTypeEnum.Drawing,
+        } as CharacterType;
+      }
       if (
         currentCharacter.name === CharacterEnum.LightVerticalAndRight ||
         currentCharacter.name === CharacterEnum.LightVerticalAndHorizontal
@@ -96,6 +115,7 @@ export default function CharacterFactory(
         } as CharacterType;
       }
     }
+
     if (column > 0 && column < 8) {
       if (row === 'J' && currentCharacter.type === CharacterTypeEnum.Drawing) {
         return {
@@ -112,6 +132,7 @@ export default function CharacterFactory(
         } as CharacterType;
       }
     }
+
     return currentCharacter;
   };
 
@@ -135,7 +156,7 @@ export default function CharacterFactory(
     const characterB = getCharacterBaseOnPosition(
       props.previousSelected.row,
       props.previousSelected.column,
-      currentCharacter,
+      {type: CharacterTypeEnum.Drawing} as CharacterType,
     );
     if (
       characterA.type === CharacterTypeEnum.Drawing &&
