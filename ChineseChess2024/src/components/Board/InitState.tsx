@@ -67,17 +67,44 @@ export const INIT_STATE = {
       color: Color.Black,
     } as CharacterType,
   ],
-  // H: [
-  //   <LightVerticalAndRight />,
-  //   <Cannon color={Color.Black} />,
-  //   <LightVerticalAndHorizontal />,
-  //   <LightVerticalAndHorizontal />,
-  //   <LightVerticalAndHorizontal />,
-  //   <LightVerticalAndHorizontal />,
-  //   <LightVerticalAndHorizontal />,
-  //   <Cannon color={Color.Black} />,
-  //   <LightVerticalAndLeft />,
-  // ],
+  H: [
+    {
+      name: CharacterEnum.LightVerticalAndRight,
+      color: Color.Black,
+    } as CharacterType,
+    {
+      name: CharacterEnum.Cannon,
+      color: Color.Black,
+    } as CharacterType,
+    {
+      name: CharacterEnum.LightVerticalAndHorizontal,
+      color: Color.Black,
+    } as CharacterType,
+    {
+      name: CharacterEnum.LightVerticalAndHorizontal,
+      color: Color.Black,
+    } as CharacterType,
+    {
+      name: CharacterEnum.LightVerticalAndHorizontal,
+      color: Color.Black,
+    } as CharacterType,
+    {
+      name: CharacterEnum.LightVerticalAndHorizontal,
+      color: Color.Black,
+    } as CharacterType,
+    {
+      name: CharacterEnum.LightVerticalAndHorizontal,
+      color: Color.Black,
+    } as CharacterType,
+    {
+      name: CharacterEnum.Cannon,
+      color: Color.Black,
+    } as CharacterType,
+    {
+      name: CharacterEnum.LightVerticalAndLeft,
+      color: Color.Black,
+    } as CharacterType,
+  ],
   // G: [
   //   <Solider color={Color.Black} />,
   //   <LightVerticalAndHorizontal />,
