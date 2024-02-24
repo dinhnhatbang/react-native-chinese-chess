@@ -62,21 +62,19 @@ export default function Board(): React.JSX.Element {
         width: WINDOW_WIDTH_ORIGINAL,
         justifyContent: 'center',
         alignItems: 'center',
+        backgroundColor: '#111',
       }}>
       <View
         style={{
           width: BOARD_WIDTH,
-          height: BOARD_WIDTH,
+          height: BOARD_WIDTH + 40,
           justifyContent: 'center',
           alignItems: 'center',
+          backgroundColor: 'white',
+          borderBlockColor: 'black',
+          borderWidth: 3,
         }}>
-        <Header />
-        <View style={{flexDirection: 'row'}}>
-          <SidebarLeft />
-          {renderBoard()}
-          <SidebarRight />
-        </View>
-        <Footer />
+        <View style={{flexDirection: 'row'}}>{renderBoard()}</View>
       </View>
     </View>
   );

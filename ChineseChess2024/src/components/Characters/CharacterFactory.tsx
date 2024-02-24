@@ -18,6 +18,7 @@ import {Color} from '../../enum/color';
 import LightDownAndRight from '../Drawing/LightDownAndRight';
 import LightDownAndHorizontal from '../Drawing/LightDownAndHorizontal';
 import LightDownAndLeft from '../Drawing/LightDownAndLeft';
+import LightUpAndHorizontal from '../Drawing/LightUpAndHorizontal';
 
 interface CharacterProp extends TextProps {
   name: string;
@@ -63,6 +64,8 @@ export default function CharacterFactory(
         return <LightDownAndLeft />;
       case CharacterEnum.LightDownAndHorizontal:
         return <LightDownAndHorizontal />;
+      case CharacterEnum.LightUpAndHorizontal:
+        return <LightUpAndHorizontal />;
     }
   };
 
@@ -104,10 +107,7 @@ export default function CharacterFactory(
           type: CharacterTypeEnum.Drawing,
         } as CharacterType;
       }
-      if (
-        currentCharacter.name === CharacterEnum.LightVerticalAndRight ||
-        currentCharacter.name === CharacterEnum.LightVerticalAndHorizontal
-      ) {
+      if (currentCharacter.type === CharacterTypeEnum.Drawing) {
         return {
           color: Color.Black,
           name: CharacterEnum.LightVerticalAndLeft,
