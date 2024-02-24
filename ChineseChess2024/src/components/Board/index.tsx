@@ -7,11 +7,7 @@ import {
 } from '../../constants/theme';
 import {CharacterType} from '../../types/characterType';
 import CharacterFactory from '../Characters/CharacterFactory';
-import Footer from './Footer';
-import Header from './Header';
 import {INIT_STATE} from './InitState';
-import SidebarLeft from './SidebarLeft';
-import SidebarRight from './SidebarRight';
 
 export default function Board(): React.JSX.Element {
   const [boardCharacters, setBoardCharacters] = useState(INIT_STATE);
