@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {TextProps, TouchableOpacity, View} from 'react-native';
 import {CHARACTER_SIZE} from '../../constants/theme';
 import {CharacterEnum} from '../../enum/character';
-import {CharacterType} from '../../types/characterType';
+import {CharacterType, MovingCharacterType} from '../../types/characterType';
 import Cannon from './Cannon';
 import Chariot from './Chariot';
 import Elephant from './Elephant';
@@ -12,9 +12,14 @@ import Madarin from './Madarin';
 import Solider from './Solider';
 
 interface CharacterProp extends TextProps {
-  name?: string;
+  name: string;
+  row: string;
+  column: number;
   character: CharacterType;
+  boardCharacters: any;
   setBoardCharacters: any;
+  previousSelected: MovingCharacterType | undefined;
+  setPreviousSelected: any;
 }
 
 export default function CharacterFactory(
@@ -49,7 +54,28 @@ export default function CharacterFactory(
       }}>
       <TouchableOpacity
         onPress={() => {
+          console.log('--------');
           const currentCharacter = props.character;
+          if (!props.previousSelected) {
+            props.setPreviousSelected({
+              ...currentCharacter,
+              row: props.row,
+              column: props.column,
+            });
+          } else {
+            console.log('previousSelected', {
+              ...props.previousSelected,
+            });
+            const currentBoardCharacters = props.boardCharacters;
+            const newBoardCharacters = currentBoardCharacters;
+            newBoardCharacters[props.row][props.column] =
+              props.previousSelected;
+            newBoardCharacters[props.previousSelected.row][
+              props.previousSelected.column
+            ] = currentCharacter;
+            props.setBoardCharacters(newBoardCharacters);
+            props.setPreviousSelected(undefined);
+          }
           console.log('currentCharacter', {
             ...currentCharacter,
             index: props.name,

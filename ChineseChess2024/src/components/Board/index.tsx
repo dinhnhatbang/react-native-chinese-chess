@@ -15,6 +15,8 @@ import SidebarRight from './SidebarRight';
 
 export default function Board(): React.JSX.Element {
   const [boardCharacters, setBoardCharacters] = useState(INIT_STATE);
+  const [previousSelected, setPreviousSelected] = useState(undefined);
+
   const renderCharacter = (
     key: string,
     index: number,
@@ -24,8 +26,13 @@ export default function Board(): React.JSX.Element {
       <CharacterFactory
         key={key + index}
         name={key + index}
+        row={key}
+        column={index}
         character={chacracter}
         setBoardCharacters={setBoardCharacters}
+        boardCharacters={boardCharacters}
+        setPreviousSelected={setPreviousSelected}
+        previousSelected={previousSelected}
       />
     );
   };
