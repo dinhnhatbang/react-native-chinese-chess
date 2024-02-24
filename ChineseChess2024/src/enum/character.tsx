@@ -11,3 +11,8 @@ export enum CharacterEnum {
   LightVerticalAndHorizontalAndCross = 'LightVerticalAndHorizontalAndCross',
   LightVerticalAndLeft = 'LightVerticalAndLeft',
 }
+
+export enum CharacterTypeEnum {
+  Character = 'Character',
+  Drawing = 'Drawing',
+}

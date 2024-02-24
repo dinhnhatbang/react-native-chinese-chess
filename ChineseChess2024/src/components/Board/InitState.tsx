@@ -1,5 +1,5 @@
 import React from 'react';
-import {CharacterEnum} from '../../enum/character';
+import {CharacterEnum, CharacterTypeEnum} from '../../enum/character';
 
 import {Color} from '../../enum/color';
 import {CharacterType} from '../../types/characterType';
@@ -19,103 +19,194 @@ import LightVerticalAndLeft from '../Drawing/LightVerticalAndLeft';
 
 export const INIT_STATE = {
   J: [
-    {name: CharacterEnum.Chariot, color: Color.Black} as CharacterType,
-    {name: CharacterEnum.Horse, color: Color.Black} as CharacterType,
-    {name: CharacterEnum.Elephant, color: Color.Black} as CharacterType,
-    {name: CharacterEnum.Madarin, color: Color.Black} as CharacterType,
-    {name: CharacterEnum.General, color: Color.Black} as CharacterType,
-    {name: CharacterEnum.Madarin, color: Color.Black} as CharacterType,
-    {name: CharacterEnum.Elephant, color: Color.Black} as CharacterType,
-    {name: CharacterEnum.Horse, color: Color.Black} as CharacterType,
-    {name: CharacterEnum.Chariot, color: Color.Black} as CharacterType,
+    {
+      name: CharacterEnum.Chariot,
+      color: Color.Black,
+      type: CharacterTypeEnum.Character,
+    } as CharacterType,
+    {
+      name: CharacterEnum.Horse,
+      color: Color.Black,
+      type: CharacterTypeEnum.Character,
+    } as CharacterType,
+    {
+      name: CharacterEnum.Elephant,
+      color: Color.Black,
+      type: CharacterTypeEnum.Character,
+    } as CharacterType,
+    {
+      name: CharacterEnum.Madarin,
+      color: Color.Black,
+      type: CharacterTypeEnum.Character,
+    } as CharacterType,
+    {
+      name: CharacterEnum.General,
+      color: Color.Black,
+      type: CharacterTypeEnum.Character,
+    } as CharacterType,
+    {
+      name: CharacterEnum.Madarin,
+      color: Color.Black,
+      type: CharacterTypeEnum.Character,
+    } as CharacterType,
+    {
+      name: CharacterEnum.Elephant,
+      color: Color.Black,
+      type: CharacterTypeEnum.Character,
+    } as CharacterType,
+    {
+      name: CharacterEnum.Horse,
+      color: Color.Black,
+      type: CharacterTypeEnum.Character,
+    } as CharacterType,
+    {
+      name: CharacterEnum.Chariot,
+      color: Color.Black,
+      type: CharacterTypeEnum.Character,
+    } as CharacterType,
   ],
   I: [
     {
       name: CharacterEnum.LightVerticalAndRight,
       color: Color.Black,
+      type: CharacterTypeEnum.Drawing,
+    } as CharacterType,
+
+    {
+      name: CharacterEnum.LightVerticalAndHorizontal,
+      color: Color.Black,
+      type: CharacterTypeEnum.Drawing,
     } as CharacterType,
     {
       name: CharacterEnum.LightVerticalAndHorizontal,
       color: Color.Black,
+      type: CharacterTypeEnum.Drawing,
     } as CharacterType,
     {
       name: CharacterEnum.LightVerticalAndHorizontal,
       color: Color.Black,
-    } as CharacterType,
-    {
-      name: CharacterEnum.LightVerticalAndHorizontal,
-      color: Color.Black,
+      type: CharacterTypeEnum.Drawing,
     } as CharacterType,
     {
       name: CharacterEnum.LightVerticalAndHorizontalAndCross,
       color: Color.Black,
+      type: CharacterTypeEnum.Drawing,
     } as CharacterType,
     {
       name: CharacterEnum.LightVerticalAndHorizontal,
       color: Color.Black,
+      type: CharacterTypeEnum.Drawing,
     } as CharacterType,
     {
       name: CharacterEnum.LightVerticalAndHorizontal,
       color: Color.Black,
+      type: CharacterTypeEnum.Drawing,
     } as CharacterType,
     {
       name: CharacterEnum.LightVerticalAndHorizontal,
       color: Color.Black,
+      type: CharacterTypeEnum.Drawing,
     } as CharacterType,
     {
       name: CharacterEnum.LightVerticalAndLeft,
       color: Color.Black,
+      type: CharacterTypeEnum.Drawing,
     } as CharacterType,
   ],
   H: [
     {
       name: CharacterEnum.LightVerticalAndRight,
       color: Color.Black,
+      type: CharacterTypeEnum.Drawing,
     } as CharacterType,
     {
       name: CharacterEnum.Cannon,
       color: Color.Black,
+      type: CharacterTypeEnum.Character,
     } as CharacterType,
     {
       name: CharacterEnum.LightVerticalAndHorizontal,
       color: Color.Black,
+      type: CharacterTypeEnum.Drawing,
     } as CharacterType,
     {
       name: CharacterEnum.LightVerticalAndHorizontal,
       color: Color.Black,
+      type: CharacterTypeEnum.Drawing,
     } as CharacterType,
     {
       name: CharacterEnum.LightVerticalAndHorizontal,
       color: Color.Black,
+      type: CharacterTypeEnum.Drawing,
     } as CharacterType,
     {
       name: CharacterEnum.LightVerticalAndHorizontal,
       color: Color.Black,
+      type: CharacterTypeEnum.Drawing,
     } as CharacterType,
     {
       name: CharacterEnum.LightVerticalAndHorizontal,
       color: Color.Black,
+      type: CharacterTypeEnum.Drawing,
     } as CharacterType,
     {
       name: CharacterEnum.Cannon,
       color: Color.Black,
+      type: CharacterTypeEnum.Character,
     } as CharacterType,
     {
       name: CharacterEnum.LightVerticalAndLeft,
       color: Color.Black,
+      type: CharacterTypeEnum.Drawing,
     } as CharacterType,
   ],
-  // G: [
-  //   <Solider color={Color.Black} />,
-  //   <LightVerticalAndHorizontal />,
-  //   <Solider color={Color.Black} />,
-  //   <LightVerticalAndHorizontal />,
-  //   <Solider color={Color.Black} />,
-  //   <LightVerticalAndHorizontal />,
-  //   <Solider color={Color.Black} />,
-  //   <LightVerticalAndHorizontal />,
-  //   <Solider color={Color.Black} />,
-  // ],
+  G: [
+    {
+      name: CharacterEnum.Solider,
+      color: Color.Black,
+      type: CharacterTypeEnum.Character,
+    } as CharacterType,
+    {
+      name: CharacterEnum.LightVerticalAndHorizontal,
+      color: Color.Black,
+      type: CharacterTypeEnum.Drawing,
+    } as CharacterType,
+    {
+      name: CharacterEnum.Solider,
+      color: Color.Black,
+      type: CharacterTypeEnum.Character,
+    } as CharacterType,
+    {
+      name: CharacterEnum.LightVerticalAndHorizontal,
+      color: Color.Black,
+      type: CharacterTypeEnum.Drawing,
+    } as CharacterType,
+    {
+      name: CharacterEnum.Solider,
+      color: Color.Black,
+      type: CharacterTypeEnum.Character,
+    } as CharacterType,
+    {
+      name: CharacterEnum.LightVerticalAndHorizontal,
+      color: Color.Black,
+      type: CharacterTypeEnum.Drawing,
+    } as CharacterType,
+    {
+      name: CharacterEnum.Solider,
+      color: Color.Black,
+      type: CharacterTypeEnum.Character,
+    } as CharacterType,
+    {
+      name: CharacterEnum.LightVerticalAndHorizontal,
+      color: Color.Black,
+      type: CharacterTypeEnum.Drawing,
+    } as CharacterType,
+    {
+      name: CharacterEnum.Solider,
+      color: Color.Black,
+      type: CharacterTypeEnum.Character,
+    } as CharacterType,
+  ],
   // F: [
   //   <LightVerticalAndRight />,
   //   <LightUpAndHorizontal />,

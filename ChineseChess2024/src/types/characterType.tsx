@@ -4,11 +4,11 @@ import {Color} from '../enum/color';
 export type CharacterType = {
   name: CharacterEnum;
   color: Color;
+  type: string;
 };
 
 export type MovingCharacterType = {
-  name: CharacterEnum;
-  color: Color;
+  character: CharacterType;
   row: string;
   column: number;
 };
