@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, memo} from 'react';
 import {View} from 'react-native';
 import {
   BOARD_WIDTH,
@@ -8,6 +8,8 @@ import {
 import {CharacterType} from '../../types/characterType';
 import CharacterFactory from '../Characters/CharacterFactory';
 import {INIT_STATE} from './InitState';
+
+const CharacterFactoryMemo = memo(CharacterFactory);
 
 export default function Board(): React.JSX.Element {
   const [boardCharacters, setBoardCharacters] = useState(INIT_STATE);
@@ -19,7 +21,7 @@ export default function Board(): React.JSX.Element {
     chacracter: CharacterType,
   ) => {
     return (
-      <CharacterFactory
+      <CharacterFactoryMemo
         key={key + index}
         name={key + index}
         row={key}

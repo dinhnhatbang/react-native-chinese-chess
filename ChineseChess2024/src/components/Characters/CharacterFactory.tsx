@@ -1,24 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {TextProps, TouchableOpacity, View} from 'react-native';
 import {CHARACTER_SIZE} from '../../constants/theme';
-import {CharacterEnum, CharacterTypeEnum} from '../../enum/character';
 import {CharacterType, MovingCharacterType} from '../../types/characterType';
-import LightVerticalAndRight from '../Drawing/LightVericalAndRight';
-import LightVerticalAndHorizontal from '../Drawing/LightVerticalAndHorizontal';
-import LightVerticalAndHorizontalAndCross from '../Drawing/LightVerticalAndHorizontalAndCross';
-import LightVerticalAndLeft from '../Drawing/LightVerticalAndLeft';
-import Cannon from './Cannon';
-import Chariot from './Chariot';
-import Elephant from './Elephant';
-import General from './General';
-import Horse from './Horse';
-import Madarin from './Madarin';
-import Solider from './Solider';
-import {Color} from '../../enum/color';
-import LightDownAndRight from '../Drawing/LightDownAndRight';
-import LightDownAndHorizontal from '../Drawing/LightDownAndHorizontal';
-import LightDownAndLeft from '../Drawing/LightDownAndLeft';
-import LightUpAndHorizontal from '../Drawing/LightUpAndHorizontal';
+import {factory} from './Factory';
+import {getCharacterBaseOnPosition} from './Moving';
+import {CharacterTypeEnum} from '../../enum/character';
 
 interface CharacterProp extends TextProps {
   name: string;
@@ -34,109 +20,7 @@ interface CharacterProp extends TextProps {
 export default function CharacterFactory(
   props: CharacterProp,
 ): React.JSX.Element {
-  const factory = (character: CharacterType) => {
-    switch (character.name) {
-      case CharacterEnum.Cannon:
-        return <Cannon color={character.color} />;
-      case CharacterEnum.Chariot:
-        return <Chariot color={character.color} />;
-      case CharacterEnum.Solider:
-        return <Solider color={character.color} />;
-      case CharacterEnum.General:
-        return <General color={character.color} />;
-      case CharacterEnum.Horse:
-        return <Horse color={character.color} />;
-      case CharacterEnum.Elephant:
-        return <Elephant color={character.color} />;
-      case CharacterEnum.Madarin:
-        return <Madarin color={character.color} />;
-      case CharacterEnum.LightVerticalAndRight:
-        return <LightVerticalAndRight />;
-      case CharacterEnum.LightVerticalAndHorizontal:
-        return <LightVerticalAndHorizontal />;
-      case CharacterEnum.LightVerticalAndHorizontalAndCross:
-        return <LightVerticalAndHorizontalAndCross />;
-      case CharacterEnum.LightVerticalAndLeft:
-        return <LightVerticalAndLeft />;
-      case CharacterEnum.LightDownAndRight:
-        return <LightDownAndRight />;
-      case CharacterEnum.LightDownAndLeft:
-        return <LightDownAndLeft />;
-      case CharacterEnum.LightDownAndHorizontal:
-        return <LightDownAndHorizontal />;
-      case CharacterEnum.LightUpAndHorizontal:
-        return <LightUpAndHorizontal />;
-    }
-  };
-
-  const getCharacterBaseOnPosition = (
-    row: string,
-    column: number,
-    currentCharacter: CharacterType,
-  ): CharacterType => {
-    console.log(
-      'row',
-      row,
-      'column',
-      column,
-      'currentCharacter',
-      currentCharacter,
-    );
-    if (column === 0) {
-      if (row === 'J' && currentCharacter.type === CharacterTypeEnum.Drawing) {
-        return {
-          color: Color.Black,
-          name: CharacterEnum.LightDownAndRight,
-          type: CharacterTypeEnum.Drawing,
-        } as CharacterType;
-      }
-      if (currentCharacter.type === CharacterTypeEnum.Drawing) {
-        return {
-          color: Color.Black,
-          name: CharacterEnum.LightVerticalAndRight,
-          type: CharacterTypeEnum.Drawing,
-        } as CharacterType;
-      }
-    }
-
-    if (column === 8) {
-      if (row === 'J' && currentCharacter.type === CharacterTypeEnum.Drawing) {
-        return {
-          color: Color.Black,
-          name: CharacterEnum.LightDownAndLeft,
-          type: CharacterTypeEnum.Drawing,
-        } as CharacterType;
-      }
-      if (currentCharacter.type === CharacterTypeEnum.Drawing) {
-        return {
-          color: Color.Black,
-          name: CharacterEnum.LightVerticalAndLeft,
-          type: CharacterTypeEnum.Drawing,
-        } as CharacterType;
-      }
-    }
-
-    if (column > 0 && column < 8) {
-      if (row === 'J' && currentCharacter.type === CharacterTypeEnum.Drawing) {
-        return {
-          color: Color.Black,
-          name: CharacterEnum.LightDownAndHorizontal,
-          type: CharacterTypeEnum.Drawing,
-        } as CharacterType;
-      }
-      if (currentCharacter.type === CharacterTypeEnum.Drawing) {
-        return {
-          color: Color.Black,
-          name: CharacterEnum.LightVerticalAndHorizontal,
-          type: CharacterTypeEnum.Drawing,
-        } as CharacterType;
-      }
-    }
-
-    return currentCharacter;
-  };
-
-  const handleCharacterMovement = () => {
+  const moving = () => {
     const currentCharacter = props.character;
     if (!props.previousSelected) {
       props.setPreviousSelected({
@@ -174,16 +58,15 @@ export default function CharacterFactory(
   };
 
   return (
-    <View
+    <TouchableOpacity
       style={{
         width: CHARACTER_SIZE,
         height: CHARACTER_SIZE,
         alignItems: 'center',
         justifyContent: 'center',
-      }}>
-      <TouchableOpacity onPress={handleCharacterMovement}>
-        {factory(props.character)}
-      </TouchableOpacity>
-    </View>
+      }}
+      onPress={moving}>
+      {factory(props.character)}
+    </TouchableOpacity>
   );
 }

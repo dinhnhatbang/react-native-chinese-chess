@@ -1,21 +1,6 @@
-import React from 'react';
 import {CharacterEnum, CharacterTypeEnum} from '../../enum/character';
-
 import {Color} from '../../enum/color';
 import {CharacterType} from '../../types/characterType';
-import Cannon from '../Characters/Cannon';
-import Chariot from '../Characters/Chariot';
-import Elephant from '../Characters/Elephant';
-import General from '../Characters/General';
-import Horse from '../Characters/Horse';
-import Madarin from '../Characters/Madarin';
-import Solider from '../Characters/Solider';
-import LightDownAndHorizontal from '../Drawing/LightDownAndHorizontal';
-import LightUpAndHorizontal from '../Drawing/LightUpAndHorizontal';
-import LightVerticalAndRight from '../Drawing/LightVericalAndRight';
-import LightVerticalAndHorizontal from '../Drawing/LightVerticalAndHorizontal';
-import LightVerticalAndHorizontalAndCross from '../Drawing/LightVerticalAndHorizontalAndCross';
-import LightVerticalAndLeft from '../Drawing/LightVerticalAndLeft';
 
 export const INIT_STATE = {
   J: [
