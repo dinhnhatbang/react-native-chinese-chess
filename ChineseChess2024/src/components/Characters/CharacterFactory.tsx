@@ -34,11 +34,16 @@ export default function CharacterFactory(
       });
       return;
     }
-    if (canNotMove(props.previousSelected.character, currentCharacter)) {
+    if (
+      canNotMove(props.previousSelected, {
+        character: currentCharacter,
+        row: props.row,
+        column: props.column,
+      })
+    ) {
       props.setPreviousSelected(undefined);
       return;
     }
-
     const currentBoardCharacters = props.boardCharacters;
     const newBoardCharacters = currentBoardCharacters;
     const characterA = getCharacterBaseOnPosition(
