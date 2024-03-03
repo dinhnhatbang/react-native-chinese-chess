@@ -38,17 +38,15 @@ export default function Board(): React.JSX.Element {
   const renderBoard = () => {
     return (
       <View style={{flexDirection: 'column'}}>
-        <View>
-          {Object.keys(boardCharacters).map((key: string) => (
-            <View style={{flexDirection: 'row'}} key={key}>
-              {key in boardCharacters &&
-                boardCharacters[key as keyof typeof boardCharacters].map(
-                  (value: CharacterType, index: number) =>
-                    renderCharacter(key, index, value),
-                )}
-            </View>
-          ))}
-        </View>
+        {Object.keys(boardCharacters).map((key: string) => (
+          <View style={{flexDirection: 'row'}} key={key}>
+            {key in boardCharacters &&
+              boardCharacters[key as keyof typeof boardCharacters].map(
+                (value: CharacterType, index: number) =>
+                  renderCharacter(key, index, value),
+              )}
+          </View>
+        ))}
       </View>
     );
   };

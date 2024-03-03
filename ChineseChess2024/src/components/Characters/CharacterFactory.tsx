@@ -23,6 +23,9 @@ export default function CharacterFactory(
   const moving = () => {
     const currentCharacter = props.character;
     if (!props.previousSelected) {
+      if (currentCharacter.type === CharacterTypeEnum.Drawing) {
+        return;
+      }
       props.setPreviousSelected({
         character: currentCharacter,
         row: props.row,
