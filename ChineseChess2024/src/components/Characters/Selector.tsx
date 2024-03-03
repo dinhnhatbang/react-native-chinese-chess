@@ -7,14 +7,6 @@ export const getCharacterBaseOnPosition = (
   column: number,
   currentCharacter: CharacterType,
 ): CharacterType => {
-  console.log(
-    'row',
-    row,
-    'column',
-    column,
-    'currentCharacter',
-    currentCharacter,
-  );
   if (column === 0) {
     if (row === 'J' && currentCharacter.type === CharacterTypeEnum.Drawing) {
       return {
