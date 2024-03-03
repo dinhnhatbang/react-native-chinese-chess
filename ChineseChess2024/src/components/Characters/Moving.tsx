@@ -78,6 +78,20 @@ export const getCharacterBaseOnPosition = (
         type: CharacterTypeEnum.Drawing,
       } as CharacterType;
     }
+    if (row === 'E' && currentCharacter.type === CharacterTypeEnum.Drawing) {
+      return {
+        color: Color.Red,
+        name: CharacterEnum.LightDownAndHorizontal,
+        type: CharacterTypeEnum.Drawing,
+      } as CharacterType;
+    }
+    if (row === 'F' && currentCharacter.type === CharacterTypeEnum.Drawing) {
+      return {
+        color: Color.Red,
+        name: CharacterEnum.LightUpAndHorizontal,
+        type: CharacterTypeEnum.Drawing,
+      } as CharacterType;
+    }
     if (currentCharacter.type === CharacterTypeEnum.Drawing) {
       return {
         color: Color.Black,

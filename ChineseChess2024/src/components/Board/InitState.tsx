@@ -73,7 +73,7 @@ export const INIT_STATE = {
       type: CharacterTypeEnum.Drawing,
     } as CharacterType,
     {
-      name: CharacterEnum.LightVerticalAndHorizontalAndCross,
+      name: CharacterEnum.LightVerticalAndHorizontal,
       color: Color.Black,
       type: CharacterTypeEnum.Drawing,
     } as CharacterType,
@@ -402,7 +402,7 @@ export const INIT_STATE = {
       type: CharacterTypeEnum.Drawing,
     } as CharacterType,
     {
-      name: CharacterEnum.LightVerticalAndHorizontalAndCross,
+      name: CharacterEnum.LightVerticalAndHorizontal,
       color: Color.Black,
       type: CharacterTypeEnum.Drawing,
     } as CharacterType,
