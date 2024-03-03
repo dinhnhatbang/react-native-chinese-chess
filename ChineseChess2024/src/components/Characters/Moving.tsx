@@ -23,6 +23,13 @@ export const getCharacterBaseOnPosition = (
         type: CharacterTypeEnum.Drawing,
       } as CharacterType;
     }
+    if (row === 'A' && currentCharacter.type === CharacterTypeEnum.Drawing) {
+      return {
+        color: Color.Red,
+        name: CharacterEnum.LightUpAndRight,
+        type: CharacterTypeEnum.Drawing,
+      } as CharacterType;
+    }
     if (currentCharacter.type === CharacterTypeEnum.Drawing) {
       return {
         color: Color.Black,
@@ -40,6 +47,13 @@ export const getCharacterBaseOnPosition = (
         type: CharacterTypeEnum.Drawing,
       } as CharacterType;
     }
+    if (row === 'A' && currentCharacter.type === CharacterTypeEnum.Drawing) {
+      return {
+        color: Color.Red,
+        name: CharacterEnum.LightUpAndLeft,
+        type: CharacterTypeEnum.Drawing,
+      } as CharacterType;
+    }
     if (currentCharacter.type === CharacterTypeEnum.Drawing) {
       return {
         color: Color.Black,
@@ -54,6 +68,13 @@ export const getCharacterBaseOnPosition = (
       return {
         color: Color.Black,
         name: CharacterEnum.LightDownAndHorizontal,
+        type: CharacterTypeEnum.Drawing,
+      } as CharacterType;
+    }
+    if (row === 'A' && currentCharacter.type === CharacterTypeEnum.Drawing) {
+      return {
+        color: Color.Red,
+        name: CharacterEnum.LightUpAndHorizontal,
         type: CharacterTypeEnum.Drawing,
       } as CharacterType;
     }

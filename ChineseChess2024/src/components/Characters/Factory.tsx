@@ -16,6 +16,8 @@ import General from '../Characters/General';
 import Horse from '../Characters/Horse';
 import Elephant from '../Characters/Elephant';
 import Madarin from '../Characters/Madarin';
+import LightUpAndRight from '../Drawing/LightUpAndRight';
+import LightUpAndLeft from '../Drawing/LightUpAndLeft';
 
 export const factory = (character: CharacterType) => {
   switch (character.name) {
@@ -43,6 +45,10 @@ export const factory = (character: CharacterType) => {
       return <LightVerticalAndLeft />;
     case CharacterEnum.LightDownAndRight:
       return <LightDownAndRight />;
+    case CharacterEnum.LightUpAndRight:
+      return <LightUpAndRight />;
+    case CharacterEnum.LightUpAndLeft:
+      return <LightUpAndLeft />;
     case CharacterEnum.LightDownAndLeft:
       return <LightDownAndLeft />;
     case CharacterEnum.LightDownAndHorizontal:
