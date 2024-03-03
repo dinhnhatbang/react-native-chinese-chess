@@ -3,7 +3,7 @@ import {TextProps, TouchableOpacity, View} from 'react-native';
 import {CHARACTER_SIZE} from '../../constants/theme';
 import {CharacterType, MovingCharacterType} from '../../types/characterType';
 import {factory} from './Factory';
-import {getCharacterBaseOnPosition} from './Moving';
+import {getCharacterBaseOnPosition} from './Selector';
 import {CharacterTypeEnum} from '../../enum/character';
 
 interface CharacterProp extends TextProps {
@@ -20,6 +20,19 @@ interface CharacterProp extends TextProps {
 export default function CharacterFactory(
   props: CharacterProp,
 ): React.JSX.Element {
+  const canNotMove = (
+    previousSelected: CharacterType,
+    currentCharacter: CharacterType,
+  ) => {
+    if (
+      previousSelected.color === currentCharacter.color &&
+      currentCharacter.type !== CharacterTypeEnum.Drawing
+    ) {
+      return true;
+    }
+    return false;
+  };
+
   const moving = () => {
     const currentCharacter = props.character;
     if (!props.previousSelected) {
@@ -33,6 +46,11 @@ export default function CharacterFactory(
       });
       return;
     }
+    if (canNotMove(props.previousSelected.character, currentCharacter)) {
+      props.setPreviousSelected(undefined);
+      return;
+    }
+
     const currentBoardCharacters = props.boardCharacters;
     const newBoardCharacters = currentBoardCharacters;
     const characterA = getCharacterBaseOnPosition(
