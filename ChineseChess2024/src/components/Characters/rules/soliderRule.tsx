@@ -1,18 +1,7 @@
-import {CharacterEnum, CharacterTypeEnum} from '../../enum/character';
-import {Color} from '../../enum/color';
-import {MovingCharacterType} from '../../types/characterType';
+import {Color} from '../../../enum/color';
+import {MovingCharacterType} from '../../../types/characterType';
 
-const eatingSameColor = (
-  previous: MovingCharacterType,
-  current: MovingCharacterType,
-) => {
-  return (
-    previous.character.color === current.character.color &&
-    current.character.type !== CharacterTypeEnum.Drawing
-  );
-};
-
-const soliderCanNotMoveRule = (
+export const soliderCanNotMoveRule = (
   previous: MovingCharacterType,
   current: MovingCharacterType,
 ) => {
@@ -32,7 +21,6 @@ const soliderCanNotMoveRule = (
   };
 
   const isCrossRiver = () => {
-    console.log('previous', previous.row.charCodeAt(0));
     if (
       previous.character.color === Color.Red &&
       previous.row.charCodeAt(0) > 69
@@ -61,24 +49,8 @@ const soliderCanNotMoveRule = (
     return true;
   }
 
-  console.log('isCrossRiver', isCrossRiver(), rowDiff);
-
   if (!isCrossRiver() && columnDiff == 1) {
     return true;
-  }
-
-  return false;
-};
-
-export const canNotMove = (
-  previous: MovingCharacterType,
-  current: MovingCharacterType,
-) => {
-  if (eatingSameColor(previous, current)) {
-    return true;
-  }
-  if (previous.character.name === CharacterEnum.Solider) {
-    return soliderCanNotMoveRule(previous, current);
   }
 
   return false;

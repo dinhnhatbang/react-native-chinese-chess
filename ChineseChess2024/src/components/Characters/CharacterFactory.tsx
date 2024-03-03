@@ -5,7 +5,7 @@ import {CharacterType, MovingCharacterType} from '../../types/characterType';
 import {factory} from './Factory';
 import {getCharacterBaseOnPosition} from './Selector';
 import {CharacterTypeEnum} from '../../enum/character';
-import {canNotMove} from './Rule';
+import {canNotMove} from './rules';
 
 interface CharacterProp extends TextProps {
   name: string;
