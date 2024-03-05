@@ -4,6 +4,7 @@ import {MovingCharacterType} from '../../../types/characterType';
 export const soliderCanNotMoveRule = (
   previous: MovingCharacterType,
   current: MovingCharacterType,
+  currentBoardCharacters: any,
 ) => {
   const isBackward = () => {
     if (previous.character.color === Color.Red) {

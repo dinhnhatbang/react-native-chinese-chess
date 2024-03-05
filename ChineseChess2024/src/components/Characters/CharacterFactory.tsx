@@ -34,17 +34,21 @@ export default function CharacterFactory(
       });
       return;
     }
+    const currentBoardCharacters = props.boardCharacters;
     if (
-      canNotMove(props.previousSelected, {
-        character: currentCharacter,
-        row: props.row,
-        column: props.column,
-      })
+      canNotMove(
+        props.previousSelected,
+        {
+          character: currentCharacter,
+          row: props.row,
+          column: props.column,
+        },
+        currentBoardCharacters,
+      )
     ) {
       props.setPreviousSelected(undefined);
       return;
     }
-    const currentBoardCharacters = props.boardCharacters;
     const newBoardCharacters = currentBoardCharacters;
     const characterA = getCharacterBaseOnPosition(
       props.row,

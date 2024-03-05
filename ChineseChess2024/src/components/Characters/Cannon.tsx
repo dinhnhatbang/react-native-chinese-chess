@@ -11,7 +11,6 @@ export default function Cannon({
   color = Color.Black,
 }: CannonProp): React.JSX.Element {
   const chacracter = color === Color.Red ? 0x1fa65 : 0x1fa6c;
-  const move = () => {};
   return (
     <View>
       <Text
