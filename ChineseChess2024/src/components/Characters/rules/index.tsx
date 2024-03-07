@@ -1,7 +1,9 @@
 import {CharacterEnum} from '../../../enum/character';
 import {MovingCharacterType} from '../../../types/characterType';
 import {cannonCanNotMoveRule} from './cannonCanNotMoveRule';
+import {chariotCanNotMoveRule} from './chariotCanNotMoveRule';
 import {eatingSameColor} from './eatingSameColorRule';
+import {CAN_MOVE, CAN_NOT_MOVE} from './ruleEnum';
 import {soliderCanNotMoveRule} from './soliderRule';
 
 export const canNotMove = (
@@ -10,7 +12,7 @@ export const canNotMove = (
   currentBoardCharacters: any,
 ) => {
   if (eatingSameColor(previous, current)) {
-    return true;
+    return CAN_NOT_MOVE;
   }
   if (previous.character.name === CharacterEnum.Solider) {
     return soliderCanNotMoveRule(previous, current, currentBoardCharacters);
@@ -18,6 +20,9 @@ export const canNotMove = (
   if (previous.character.name === CharacterEnum.Cannon) {
     return cannonCanNotMoveRule(previous, current, currentBoardCharacters);
   }
+  if (previous.character.name === CharacterEnum.Chariot) {
+    return chariotCanNotMoveRule(previous, current, currentBoardCharacters);
+  }
 
-  return false;
+  return CAN_MOVE;
 };

@@ -1,9 +1,7 @@
 import {CharacterTypeEnum} from '../../../enum/character';
 
-const CAN_NOT_MOVE = true;
-const CAN_MOVE = false;
-
 import {MovingCharacterType} from '../../../types/characterType';
+import {CAN_MOVE, CAN_NOT_MOVE} from './ruleEnum';
 
 export const cannonCanNotMoveRule = (
   previous: MovingCharacterType,
