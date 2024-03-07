@@ -20,7 +20,7 @@ export const INIT_STATE = {
       type: CharacterTypeEnum.Character,
     } as CharacterType,
     {
-      name: CharacterEnum.Madarin,
+      name: CharacterEnum.Mandarin,
       color: Color.Black,
       type: CharacterTypeEnum.Character,
     } as CharacterType,
@@ -30,7 +30,7 @@ export const INIT_STATE = {
       type: CharacterTypeEnum.Character,
     } as CharacterType,
     {
-      name: CharacterEnum.Madarin,
+      name: CharacterEnum.Mandarin,
       color: Color.Black,
       type: CharacterTypeEnum.Character,
     } as CharacterType,
@@ -444,7 +444,7 @@ export const INIT_STATE = {
       type: CharacterTypeEnum.Character,
     } as CharacterType,
     {
-      name: CharacterEnum.Madarin,
+      name: CharacterEnum.Mandarin,
       color: Color.Red,
       type: CharacterTypeEnum.Character,
     } as CharacterType,
@@ -454,7 +454,7 @@ export const INIT_STATE = {
       type: CharacterTypeEnum.Character,
     } as CharacterType,
     {
-      name: CharacterEnum.Madarin,
+      name: CharacterEnum.Mandarin,
       color: Color.Red,
       type: CharacterTypeEnum.Character,
     } as CharacterType,

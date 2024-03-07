@@ -1,8 +1,8 @@
 import {Dimensions} from 'react-native';
 
-const NUMBER_COLUMNS = 12;
+const NUMBER_COLUMNS = 10;
 
-export const WINDOW_WIDTH_ORIGINAL = 400;
+export const WINDOW_WIDTH_ORIGINAL = Dimensions.get('window').width;
 export const WINDOW_HEIGHT_ORIGINAL = Dimensions.get('window').height;
 
 let windowWidth = WINDOW_WIDTH_ORIGINAL;

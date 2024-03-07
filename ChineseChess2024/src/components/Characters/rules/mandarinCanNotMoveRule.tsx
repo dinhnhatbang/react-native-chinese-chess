@@ -3,7 +3,7 @@ import {Color} from '../../../enum/color';
 import {MovingCharacterType} from '../../../types/characterType';
 import {CAN_MOVE, CAN_NOT_MOVE} from './ruleEnum';
 
-export const elephantCanNotMoveRule = (
+export const mandarinCanNotMoveRule = (
   previous: MovingCharacterType,
   current: MovingCharacterType,
   currentBoardCharacters: any,
@@ -12,7 +12,7 @@ export const elephantCanNotMoveRule = (
   const currentRowNumber = current.row.charCodeAt(0);
   const columnDiff = Math.abs(previous.column - current.column);
   const rowDiff = Math.abs(previousRowNumber - currentRowNumber);
-  if (columnDiff !== 2 || rowDiff !== 2) {
+  if (columnDiff !== 1 || rowDiff !== 1) {
     return CAN_NOT_MOVE;
   }
   if (
@@ -24,16 +24,6 @@ export const elephantCanNotMoveRule = (
   if (
     previous.character.color === Color.Red &&
     current.row.charCodeAt(0) > 70
-  ) {
-    return CAN_NOT_MOVE;
-  }
-  const rowBetween = String.fromCharCode(
-    (previousRowNumber + currentRowNumber) / 2,
-  );
-  const columnBetween = (previous.column + current.column) / 2;
-  if (
-    currentBoardCharacters[rowBetween][columnBetween].type ===
-    CharacterTypeEnum.Character
   ) {
     return CAN_NOT_MOVE;
   }

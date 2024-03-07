@@ -1,6 +1,6 @@
 export enum CharacterEnum {
   General = 'General',
-  Madarin = 'Madarin',
+  Mandarin = 'Mandarin',
   Elephant = 'Elephant',
   Horse = 'Horse',
   Chariot = 'Chariot',

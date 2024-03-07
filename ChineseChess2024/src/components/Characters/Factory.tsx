@@ -15,9 +15,9 @@ import Solider from '../Characters/Solider';
 import General from '../Characters/General';
 import Horse from '../Characters/Horse';
 import Elephant from '../Characters/Elephant';
-import Madarin from '../Characters/Madarin';
 import LightUpAndRight from '../Drawing/LightUpAndRight';
 import LightUpAndLeft from '../Drawing/LightUpAndLeft';
+import Mandarin from './Mandarin';
 
 export const factory = (character: CharacterType) => {
   switch (character.name) {
@@ -33,8 +33,8 @@ export const factory = (character: CharacterType) => {
       return <Horse color={character.color} />;
     case CharacterEnum.Elephant:
       return <Elephant color={character.color} />;
-    case CharacterEnum.Madarin:
-      return <Madarin color={character.color} />;
+    case CharacterEnum.Mandarin:
+      return <Mandarin color={character.color} />;
     case CharacterEnum.LightVerticalAndRight:
       return <LightVerticalAndRight />;
     case CharacterEnum.LightVerticalAndHorizontal:
