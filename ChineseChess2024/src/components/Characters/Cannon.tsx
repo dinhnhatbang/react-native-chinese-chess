@@ -1,25 +1,18 @@
 import React from 'react';
-import {Text, TextProps, View} from 'react-native';
-import {FONT_FAMILY, FONT_SIZE} from '../../constants/theme';
+import {TextProps} from 'react-native';
 import {Color} from '../../enum/color';
+import CharacterWrapper from './CharacterWrapper';
 
-interface CannonProp extends TextProps {
-  color: Color;
+interface ColorProp extends TextProps {
+  color?: Color;
 }
 
-export default function Cannon({
-  color = Color.Black,
-}: CannonProp): React.JSX.Element {
-  const chacracter = color === Color.Red ? 0x1fa65 : 0x1fa6c;
+export default function Cannon(props: ColorProp): React.JSX.Element {
   return (
-    <View>
-      <Text
-        style={{
-          fontFamily: FONT_FAMILY,
-          fontSize: FONT_SIZE,
-        }}>
-        {String.fromCodePoint(chacracter)}
-      </Text>
-    </View>
+    <CharacterWrapper
+      color={props.color}
+      redCharacter={0x1fa65}
+      blackCharacter={0x1fa6c}
+    />
   );
 }
