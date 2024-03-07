@@ -3,6 +3,7 @@ import {MovingCharacterType} from '../../../types/characterType';
 import {cannonCanNotMoveRule} from './cannonCanNotMoveRule';
 import {chariotCanNotMoveRule} from './chariotCanNotMoveRule';
 import {eatingSameColor} from './eatingSameColorRule';
+import {horseCanNotMoveRule} from './horseCanNotMoveRule';
 import {CAN_MOVE, CAN_NOT_MOVE} from './ruleEnum';
 import {soliderCanNotMoveRule} from './soliderRule';
 
@@ -22,6 +23,9 @@ export const canNotMove = (
   }
   if (previous.character.name === CharacterEnum.Chariot) {
     return chariotCanNotMoveRule(previous, current, currentBoardCharacters);
+  }
+  if (previous.character.name === CharacterEnum.Horse) {
+    return horseCanNotMoveRule(previous, current, currentBoardCharacters);
   }
 
   return CAN_MOVE;
