@@ -58,7 +58,7 @@ export default function Board(): React.JSX.Element {
         width: WINDOW_WIDTH_ORIGINAL,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#111',
+        backgroundColor: '#302813',
       }}>
       <View
         style={{
@@ -66,7 +66,7 @@ export default function Board(): React.JSX.Element {
           height: BOARD_WIDTH + 40,
           justifyContent: 'center',
           alignItems: 'center',
-          backgroundColor: 'white',
+          backgroundColor: '#FAF3CF',
           borderBlockColor: 'black',
         }}>
         <View style={{flexDirection: 'row'}}>{renderBoard()}</View>

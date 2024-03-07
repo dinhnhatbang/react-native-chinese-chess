@@ -12,17 +12,20 @@ interface ChracterProps extends TextProps {
 export default function CharacterWrapper(
   props: ChracterProps,
 ): React.JSX.Element {
-  const chacracter =
-    props.color === Color.Red ? props.redCharacter : props.blackCharacter;
   return (
     <View>
       <Text
         style={{
           fontFamily: FONT_FAMILY,
           fontSize: FONT_SIZE,
-          transform: [{scaleY: props.color === Color.Black ? -1 : 1}],
+          transform:
+            props.color === Color.Black
+              ? [{scaleY: -1}, {scaleX: -1}]
+              : [{scaleY: 1}, {scaleX: 1}],
         }}>
-        {String.fromCodePoint(chacracter)}
+        {String.fromCodePoint(
+          props.color === Color.Red ? props.redCharacter : props.blackCharacter,
+        )}
       </Text>
     </View>
   );
