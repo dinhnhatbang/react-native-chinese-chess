@@ -1,6 +1,6 @@
 import {CharacterEnum} from '../../../enum/character';
 import {MovingCharacterType} from '../../../types/characterType';
-import {mandarinCanNotMoveRule} from './MandarinCanNotMoveRule';
+import {mandarinCanNotMoveRule} from './mandarinCanNotMoveRule';
 import {cannonCanNotMoveRule} from './cannonCanNotMoveRule';
 import {chariotCanNotMoveRule} from './chariotCanNotMoveRule';
 import {eatingSameColor} from './eatingSameColorRule';

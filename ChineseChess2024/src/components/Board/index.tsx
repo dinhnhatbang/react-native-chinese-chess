@@ -2,6 +2,7 @@ import React, {useState, memo} from 'react';
 import {View} from 'react-native';
 import {
   BOARD_WIDTH,
+  CHARACTER_SIZE,
   WINDOW_HEIGHT_ORIGINAL,
   WINDOW_WIDTH_ORIGINAL,
 } from '../../constants/theme';
@@ -63,11 +64,10 @@ export default function Board(): React.JSX.Element {
       <View
         style={{
           width: BOARD_WIDTH,
-          height: BOARD_WIDTH + 40,
+          height: BOARD_WIDTH + CHARACTER_SIZE * 2,
           justifyContent: 'center',
           alignItems: 'center',
           backgroundColor: '#FAF3CF',
-          borderBlockColor: 'black',
         }}>
         <View style={{flexDirection: 'row'}}>{renderBoard()}</View>
       </View>
